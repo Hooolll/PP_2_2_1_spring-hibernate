@@ -46,6 +46,15 @@ public class Car {
     }
 
     @Override
+    public String toString() {
+        return "Car{" +
+                "id=" + id +
+                ", model='" + model + '\'' +
+                ", series=" + series +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -54,8 +63,7 @@ public class Car {
 
         if (series != car.series) return false;
         if (id != null ? !id.equals(car.id) : car.id != null) return false;
-        if (model != null ? !model.equals(car.model) : car.model != null) return false;
-        return user != null ? user.equals(car.user) : car.user == null;
+        return model != null ? model.equals(car.model) : car.model == null;
     }
 
     @Override
@@ -63,17 +71,6 @@ public class Car {
         int result = id != null ? id.hashCode() : 0;
         result = 31 * result + (model != null ? model.hashCode() : 0);
         result = 31 * result + series;
-        result = 31 * result + (user != null ? user.hashCode() : 0);
         return result;
-    }
-
-    @Override
-    public String toString() {
-        return "Car{" +
-                "id=" + id +
-                ", model='" + model + '\'' +
-                ", series=" + series +
-                ", user=" + user +
-                '}';
     }
 }
